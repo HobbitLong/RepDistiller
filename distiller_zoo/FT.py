@@ -5,7 +5,7 @@ import torch.nn.functional as F
 
 
 class FactorTransfer(nn.Module):
-    """Factor transfer loss"""
+    """Paraphrasing Complex Network: Network Compression via Factor Transfer, NeurIPS 2018"""
     def __init__(self, p1=2, p2=1):
         super(FactorTransfer, self).__init__()
         self.p1 = p1

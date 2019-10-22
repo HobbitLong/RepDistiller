@@ -6,7 +6,7 @@ import torch.nn.functional as F
 
 
 class RKDLoss(nn.Module):
-    """Relational Knowledge Disitllation"""
+    """Relational Knowledge Disitllation, CVPR2019"""
     def __init__(self, w_d=25, w_a=50):
         super(RKDLoss, self).__init__()
         self.w_d = w_d

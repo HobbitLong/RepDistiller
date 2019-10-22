@@ -5,7 +5,7 @@ import torch.nn.functional as F
 
 
 class DistillKL(nn.Module):
-    """KL divergence for KD"""
+    """Distilling the Knowledge in a Neural Network"""
     def __init__(self, T):
         super(DistillKL, self).__init__()
         self.T = T

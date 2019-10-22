@@ -5,7 +5,7 @@ import torch.nn as nn
 
 
 class Correlation(nn.Module):
-    """correlation congruence loss, ICCV 2019.
+    """Correlation Congruence for Knowledge Distillation, ICCV 2019.
     code emailed to me by the original author, credits to the original author"""
     def __init__(self):
         super(Correlation, self).__init__()

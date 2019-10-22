@@ -4,7 +4,7 @@ import torch.nn as nn
 
 
 class HintLoss(nn.Module):
-    """regression loss from hints"""
+    """Fitnets: hints for thin deep nets, ICLR 2015"""
     def __init__(self):
         super(HintLoss, self).__init__()
         self.crit = nn.MSELoss()

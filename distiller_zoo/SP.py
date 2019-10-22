@@ -6,7 +6,7 @@ import torch.nn.functional as F
 
 
 class Similarity(nn.Module):
-    """Similarity-preserving loss, ICCV2019, verified by original author"""
+    """Similarity-Preserving Knowledge Distillation, ICCV2019, verified by original author"""
     def __init__(self):
         super(Similarity, self).__init__()
 
