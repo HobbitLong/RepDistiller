@@ -283,7 +283,7 @@ def main():
         cudnn.benchmark = True
 
     # validate teacher accuracy
-    teacher_acc, _ = validate(val_loader, model_t, criterion_cls, opt)
+    teacher_acc, _, _ = validate(val_loader, model_t, criterion_cls, opt)
     print('teacher accuracy: ', teacher_acc)
 
     # routine
