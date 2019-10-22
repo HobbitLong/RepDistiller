@@ -8,7 +8,6 @@ import os
 import argparse
 import socket
 import time
-import sys
 
 import tensorboard_logger as tb_logger
 import torch
@@ -16,13 +15,8 @@ import torch.optim as optim
 import torch.nn as nn
 import torch.backends.cudnn as cudnn
 
-from models.resnet import resnet8, resnet14, resnet20, resnet32, resnet44, resnet56, resnet110, resnet8x4, resnet32x4
-from models.resnetv2 import ResNet50
-from models.wrn import wrn_16_1, wrn_16_2, wrn_40_1, wrn_40_2
-from models.vgg import vgg19_bn, vgg16_bn, vgg13_bn, vgg11_bn, vgg8_bn
-from models.mobilenetv2 import mobile_half, mobile_full
-from models.ShuffleNetv1 import ShuffleV1
-from models.ShuffleNetv2 import ShuffleV2
+
+from models import model_dict
 from models.util import Embed, ConvReg, LinearEmbed
 from models.util import Connector, Translator, Paraphraser
 
@@ -36,15 +30,6 @@ from crd.criterion import CRDLoss
 
 from helper.loops import train_distill as train, validate
 from helper.pretrain import init
-
-model_dict = {
-    'resnet8': resnet8, 'resnet14': resnet14, 'resnet20': resnet20, 'resnet32': resnet32, 'resnet44': resnet44,
-    'resnet56': resnet56, 'resnet110': resnet110, 'resnet8x4': resnet8x4, 'resnet32x4': resnet32x4,
-    'wrn_16_1': wrn_16_1, 'wrn_16_2': wrn_16_2, 'wrn_40_1': wrn_40_1, 'wrn_40_2': wrn_40_2,
-    'vgg19': vgg19_bn, 'vgg16': vgg16_bn, 'vgg13': vgg13_bn, 'vgg11': vgg11_bn, 'vgg8': vgg8_bn,
-    'ResNet50': ResNet50, 'mobile_half': mobile_half, 'mobile_full': mobile_full,
-    'ShuffleV1': ShuffleV1, 'ShuffleV2': ShuffleV2,
-}
 
 
 def parse_option():

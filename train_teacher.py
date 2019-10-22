@@ -4,7 +4,6 @@ import os
 import argparse
 import socket
 import time
-import sys
 
 import tensorboard_logger as tb_logger
 import torch
@@ -12,12 +11,7 @@ import torch.optim as optim
 import torch.nn as nn
 import torch.backends.cudnn as cudnn
 
-from models.resnet import resnet8, resnet14, resnet20, resnet32, resnet44, resnet56, resnet110, resnet8x4, resnet32x4
-from models.wrn import wrn_16_1, wrn_16_2, wrn_40_1, wrn_40_2
-from models.vgg import vgg8_bn, vgg11_bn, vgg13_bn, vgg16_bn, vgg19_bn
-from models.mobilenetv2 import mobile_half, mobile_full
-from models.ShuffleNetv1 import ShuffleV1
-from models.ShuffleNetv2 import ShuffleV2
+from models import model_dict
 
 from dataset.cifar100 import get_cifar100_dataloaders
 
@@ -97,30 +91,6 @@ def main():
         raise NotImplementedError(opt.dataset)
 
     # model
-    model_dict = {
-        'resnet8': resnet8,
-        'resnet14': resnet14,
-        'resnet20': resnet20,
-        'resnet32': resnet32,
-        'resnet44': resnet44,
-        'resnet56': resnet56,
-        'resnet110': resnet110,
-        'resnet8x4': resnet8x4,
-        'resnet32x4': resnet32x4,
-        'wrn_16_1': wrn_16_1,
-        'wrn_16_2': wrn_16_2,
-        'wrn_40_1': wrn_40_1,
-        'wrn_40_2': wrn_40_2,
-        'vgg8': vgg8_bn,
-        'vgg11': vgg11_bn,
-        'vgg13': vgg13_bn,
-        'vgg16': vgg16_bn,
-        'vgg19': vgg19_bn,
-        'mobile_half': mobile_half,
-        'mobile_full': mobile_full,
-        'ShuffleV1': ShuffleV1,
-        'ShuffleV2': ShuffleV2,
-    }
     model = model_dict[opt.model](num_classes=n_cls)
 
     # optimizer

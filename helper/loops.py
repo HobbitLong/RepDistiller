@@ -93,7 +93,7 @@ def train_distill(epoch, train_loader, module_list, criterion_list, optimizer, o
 
     end = time.time()
     for idx, data in enumerate(train_loader):
-        if opt.distill in ['contrast', 'infonce']:
+        if opt.distill in ['contrast']:
             input, target, index, contrast_idx = data
         else:
             input, target, index = data
@@ -104,7 +104,7 @@ def train_distill(epoch, train_loader, module_list, criterion_list, optimizer, o
             input = input.cuda()
             target = target.cuda()
             index = index.cuda()
-            if opt.distill in ['contrast', 'infonce']:
+            if opt.distill in ['contrast']:
                 contrast_idx = contrast_idx.cuda()
 
         # ===================forward=====================
@@ -131,14 +131,6 @@ def train_distill(epoch, train_loader, module_list, criterion_list, optimizer, o
             f_s = module_list[1](feat_s[-1])
             f_t = module_list[2](feat_t[-1])
             loss_kd = criterion_kd(f_s, f_t, index, contrast_idx)
-        elif opt.distill == 'infonce':
-            f_s = module_list[1](feat_s[-1])
-            f_t = module_list[2](feat_t[-1])
-            loss_kd = criterion_kd(f_s, f_t, index, contrast_idx)
-        elif opt.distill == 'softmax':
-            f_s = module_list[1](feat_s[-1])
-            f_t = module_list[2](feat_t[-1])
-            loss_kd = criterion_kd(f_s, f_t)
         elif opt.distill == 'attention':
             g_s = feat_s[1:-1]
             g_t = feat_t[1:-1]
