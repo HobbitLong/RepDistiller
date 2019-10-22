@@ -39,7 +39,7 @@ def init(model_s, model_t, init_modules, criterion, train_loader, logger, opt):
         losses.reset()
         end = time.time()
         for idx, data in enumerate(train_loader):
-            if opt.distill in ['contrast', 'infonce']:
+            if opt.distill in ['crd']:
                 input, target, index, contrast_idx = data
             else:
                 input, target, index = data
@@ -50,7 +50,7 @@ def init(model_s, model_t, init_modules, criterion, train_loader, logger, opt):
                 input = input.cuda()
                 target = target.cuda()
                 index = index.cuda()
-                if opt.distill in ['contrast', 'infonce']:
+                if opt.distill in ['crd']:
                     contrast_idx = contrast_idx.cuda()
 
             # ============= forward ==============

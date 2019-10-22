@@ -150,7 +150,7 @@ def main():
 
     # dataloader
     if opt.dataset == 'cifar100':
-        if opt.distill in ['contrast']:
+        if opt.distill in ['crd']:
             train_loader, val_loader, n_data = get_cifar100_dataloaders_sample(batch_size=opt.batch_size,
                                                                                num_workers=opt.num_workers,
                                                                                k=opt.nce_k,
