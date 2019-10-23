@@ -7,7 +7,7 @@ import numpy as np
 
 
 class VIDLoss(nn.Module):
-    """Variational Information Distillation (CVPR 2019),
+    """Variational Information Distillation for Knowledge Transfer (CVPR 2019),
     code from author: https://github.com/ssahn0215/variational-information-distillation"""
     def __init__(self,
                  num_input_channels,

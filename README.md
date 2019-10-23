@@ -4,10 +4,26 @@ This repo:
 
 (1) covers the implementation of the following paper:
 
-"Contrastive Representation Distillation" (CRD)
+"Contrastive Representation Distillation" (CRD). [Paper](http://arxiv.org/abs/1906.05849), [Project Page](http://hobbitlong.github.io/CRD/).
 
-(2) benchmarks the state-of-the-art knowledge distillation methods in Pytorch
+![Teaser Image](http://hobbitlong.github.io/CRD/CRD_files/teaser.jpg)
 
+(2) benchmarks most of the state-of-the-art knowledge distillation methods in PyTorch, including:
+
+(KD) - Distilling the Knowledge in a Neural Network  
+(FitNet) - Fitnets: hints for thin deep nets  
+(AT) - Paying More Attention to Attention: Improving the Performance of Convolutional Neural Networks
+    via Attention Transfer  
+(SP) - Similarity-Preserving Knowledge Distillation  
+(CC) - Correlation Congruence for Knowledge Distillation  
+(VID) - Variational Information Distillation for Knowledge Transfer  
+(RKD) - Relational Knowledge Disitllation
+(PKT) - Probabilistic Knowledge Transfer for deep representation learning  
+(AB) - Knowledge Transfer via Distillation of Activation Boundaries Formed by Hidden Neurons  
+(FT) - Paraphrasing Complex Network: Network Compression via Factor Transfer  
+(FSP) - A Gift from Knowledge Distillation:
+    Fast Optimization, Network Minimization and Transfer Learning  
+(NST) - Like what you like: knowledge distill via neuron selectivity transfer 
 
 ## Installation
 
@@ -48,3 +64,6 @@ This repo was tested with Ubuntu 16.04.5 LTS, Python 3.5, PyTorch 0.4.0, and CUD
 
 3. (optional) Train teacher networks from scratch. Example commands are in `scripts/run_cifar_vanilla.sh`
 
+## Acknowledgement
+
+Thanks to Baoyun Peng for providing the code of CC and to Frederick Tung for verifying our reimplementation of SP. Thanks also go to authors of other papers who make their code publicly available.
