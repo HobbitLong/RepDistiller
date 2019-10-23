@@ -8,7 +8,7 @@ This repo:
 
 <div style="text-align:center"><img src="http://hobbitlong.github.io/CRD/CRD_files/teaser.jpg" width="70%" height="70%"></div>
 
-(2) benchmarks 12 the state-of-the-art knowledge distillation methods in PyTorch, including:
+(2) benchmarks 12 state-of-the-art knowledge distillation methods in PyTorch, including:
 
 (KD) - Distilling the Knowledge in a Neural Network  
 (FitNet) - Fitnets: hints for thin deep nets  

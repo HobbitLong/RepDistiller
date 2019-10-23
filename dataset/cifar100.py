@@ -24,7 +24,7 @@ def get_data_folder():
     """
     hostname = socket.gethostname()
     if hostname.startswith('visiongpu'):
-        data_folder = '/data/vision/billf/scratch/yltian/datasets'
+        data_folder = '/data/vision/phillipi/rep-learn/datasets'
     elif hostname.startswith('yonglong-home'):
         data_folder = '/home/yonglong/Data/data'
     else:
