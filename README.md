@@ -68,6 +68,8 @@ This repo was tested with Ubuntu 16.04.5 LTS, Python 3.5, PyTorch 0.4.0, and CUD
 
 ## Benchmark Results on CIFAR-100:
 
+Performance is measured by classification accuracy (%)
+
 1. Teacher and student are of the **same** architectural type.
 
 | Teacher <br> Student | wrn-40-2 <br> wrn-16-2 | wrn-40-2 <br> wrn-40-1 | resnet56 <br> resnet20 | resnet110 <br> resnet20 | resnet110 <br> resnet32 | resnet32x4 <br> resnet8x4 |  vgg13 <br> vgg8 |
