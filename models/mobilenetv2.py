@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 import math
 
-__all__ = ['mobilenetv2_T_w', 'mobile_half', 'mobile_full']
+__all__ = ['mobilenetv2_T_w', 'mobile_half']
 
 BN = None
 
@@ -182,10 +182,6 @@ def mobilenetv2_T_w(T, W, feature_dim=100):
 
 def mobile_half(num_classes):
     return mobilenetv2_T_w(6, 0.5, num_classes)
-
-
-def mobile_full(num_classes):
-    return mobilenetv2_T_w(6, 1., num_classes)
 
 
 if __name__ == '__main__':
