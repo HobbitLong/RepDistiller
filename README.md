@@ -6,7 +6,7 @@ This repo:
 
 "Contrastive Representation Distillation" (CRD). [Paper](http://arxiv.org/abs/1906.05849), [Project Page](http://hobbitlong.github.io/CRD/).
 
-![Teaser Image](http://hobbitlong.github.io/CRD/CRD_files/teaser.jpg)
+<div style="text-align:center"><img src="http://hobbitlong.github.io/CRD/CRD_files/teaser.jpg" width="70%" height="70%"></div>
 
 (2) benchmarks most of the state-of-the-art knowledge distillation methods in PyTorch, including:
 
