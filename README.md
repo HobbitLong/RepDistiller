@@ -17,7 +17,7 @@ This repo:
 (SP) - Similarity-Preserving Knowledge Distillation  
 (CC) - Correlation Congruence for Knowledge Distillation  
 (VID) - Variational Information Distillation for Knowledge Transfer  
-(RKD) - Relational Knowledge Disitllation
+(RKD) - Relational Knowledge Disitllation  
 (PKT) - Probabilistic Knowledge Transfer for deep representation learning  
 (AB) - Knowledge Transfer via Distillation of Activation Boundaries Formed by Hidden Neurons  
 (FT) - Paraphrasing Complex Network: Network Compression via Factor Transfer  
