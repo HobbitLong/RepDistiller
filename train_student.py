@@ -188,13 +188,14 @@ def main():
         module_list.append(regress_s)
         trainable_list.append(regress_s)
     elif opt.distill == 'crd':
-        criterion_kd = CRDLoss(opt, n_data)
-        embed_s = Embed(feat_s[-1].shape[1], opt.feat_dim)
-        embed_t = Embed(feat_t[-1].shape[1], opt.feat_dim)
-        module_list.append(embed_s)
-        module_list.append(embed_t)
-        trainable_list.append(embed_s)
-        trainable_list.append(embed_t)
+        opt.s_dim = feat_s[-1].shape[1]
+        opt.t_dim = feat_t[-1].shape[1]
+        opt.n_data = n_data
+        criterion_kd = CRDLoss(opt)
+        module_list.append(criterion_kd.embed_s)
+        module_list.append(criterion_kd.embed_t)
+        trainable_list.append(criterion_kd.embed_s)
+        trainable_list.append(criterion_kd.embed_t)
     elif opt.distill == 'attention':
         criterion_kd = Attention()
     elif opt.distill == 'nst':

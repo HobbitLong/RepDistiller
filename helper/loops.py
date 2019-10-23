@@ -128,8 +128,8 @@ def train_distill(epoch, train_loader, module_list, criterion_list, optimizer, o
             f_t = feat_t[opt.hint_layer]
             loss_kd = criterion_kd(f_s, f_t)
         elif opt.distill == 'crd':
-            f_s = module_list[1](feat_s[-1])
-            f_t = module_list[2](feat_t[-1])
+            f_s = feat_s[-1]
+            f_t = feat_t[-1]
             loss_kd = criterion_kd(f_s, f_t, index, contrast_idx)
         elif opt.distill == 'attention':
             g_s = feat_s[1:-1]
