@@ -4,7 +4,7 @@ This repo:
 
 **(1) covers the implementation of the following paper:**
 
-"Contrastive Representation Distillation" (CRD). [Paper](http://arxiv.org/abs/1906.05849), [Project Page](http://hobbitlong.github.io/CRD/).
+"Contrastive Representation Distillation" (CRD). [Paper](http://arxiv.org/abs/1910.10699), [Project Page](http://hobbitlong.github.io/CRD/).
 
 <div style="text-align:center"><img src="http://hobbitlong.github.io/CRD/CRD_files/teaser.jpg" width="85%" height="85%"></div>  
 
@@ -106,6 +106,20 @@ Performance is measured by classification accuracy (%)
 | FT | 61.78 | 60.99 | 70.29 | 71.75 | 72.50 | 72.03 |
 | NST | 58.16 | 64.96 | 71.28 | 74.12 | 74.68 | 74.89 |
 | **CRD** | **69.73** | **69.11** | **74.30** | **75.11** | **75.65** | **76.05** |
+
+## Citation
+
+If you find this repo useful for your research, please consider citing the paper
+
+```
+@article{tian2019crd,
+  title={Contrastive Representation Distillation},
+  author={Tian, Yonglong and Krishnan, Dilip and Isola, Phillip},
+  journal={arXiv preprint arXiv:1910.10699},
+  year={2019}
+}
+```
+For any questions, please contact Yonglong Tian (yonglong@mit.edu).
 
 ## Acknowledgement
 
