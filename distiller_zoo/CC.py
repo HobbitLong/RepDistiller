@@ -6,7 +6,8 @@ import torch.nn as nn
 
 class Correlation(nn.Module):
     """Correlation Congruence for Knowledge Distillation, ICCV 2019.
-    code emailed to me by the original author, credits to the original author"""
+    The authors nicely shared the code with me. This is a modified version based on
+    the original authors' implementation. Credits go to the original author"""
     def __init__(self):
         super(Correlation, self).__init__()
 
