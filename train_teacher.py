@@ -50,6 +50,10 @@ def parse_option():
     parser.add_argument('-t', '--trial', type=int, default=0, help='the experiment id')
 
     opt = parser.parse_args()
+    
+    # set different learning rate from these 4 models
+    if opt.model in ['MobileNetV2', 'ShuffleV1', 'ShuffleV2']:
+        opt.learning_rate = 0.01
 
     # set the path according to the environment
     if hostname.startswith('visiongpu'):
