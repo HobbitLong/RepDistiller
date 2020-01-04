@@ -2,7 +2,7 @@
 
 This repo:
 
-**(1) covers the implementation of the following paper:**
+**(1) covers the implementation of the following ICLR 2020 paper:**
 
 "Contrastive Representation Distillation" (CRD). [Paper](http://arxiv.org/abs/1910.10699), [Project Page](http://hobbitlong.github.io/CRD/).
 
@@ -114,11 +114,11 @@ Performance is measured by classification accuracy (%)
 If you find this repo useful for your research, please consider citing the paper
 
 ```
-@article{tian2019crd,
+@inproceedings{tian2019crd,
   title={Contrastive Representation Distillation},
-  author={Tian, Yonglong and Krishnan, Dilip and Isola, Phillip},
-  journal={arXiv preprint arXiv:1910.10699},
-  year={2019}
+  author={Yonglong Tian and Dilip Krishnan and Phillip Isola},
+  booktitle={International Conference on Learning Representations},
+  year={2020}
 }
 ```
 For any questions, please contact Yonglong Tian (yonglong@mit.edu).
