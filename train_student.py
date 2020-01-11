@@ -330,6 +330,8 @@ def main():
             save_file = os.path.join(opt.save_folder, 'ckpt_epoch_{epoch}.pth'.format(epoch=epoch))
             torch.save(state, save_file)
 
+    # This best accuracy is only for printing purpose.
+    # The results reported in the paper/README is from the last epoch. 
     print('best accuracy:', best_acc)
 
     # save model
