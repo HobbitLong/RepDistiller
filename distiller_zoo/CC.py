@@ -18,7 +18,8 @@ class Correlation(nn.Module):
 
 
 # class Correlation(nn.Module):
-#     """Similarity-preserving loss"""
+#     """Similarity-preserving loss. My origianl own reimplementation 
+#     based on the paper before emailing the original authors."""
 #     def __init__(self):
 #         super(Correlation, self).__init__()
 #
