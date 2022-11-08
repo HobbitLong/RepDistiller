@@ -39,13 +39,7 @@ class ImageFolderInstance(datasets.ImageFolder):
         Returns:
             tuple: (image, target) where target is class_index of the target class.
         """
-        path, target = self.imgs[index]
-        img = self.loader(path)
-        if self.transform is not None:
-            img = self.transform(img)
-        if self.target_transform is not None:
-            target = self.target_transform(target)
-
+        img, target = super().__getitem__(index)
         return img, target, index
 
 
