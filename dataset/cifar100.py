@@ -41,9 +41,9 @@ class CIFAR100Instance(datasets.CIFAR100):
     """
     def __getitem__(self, index):
         if self.train:
-            img, target = self.data[index], self.train_labels[index]
+            img, target = self.data[index], self.targets[index]
         else:
-            img, target = self.train_labels[index], self.targets[index]
+            img, target = self.data[index], self.targets[index]
 
         # doing this so that it is consistent with all other datasets
         # to return a PIL Image
@@ -122,9 +122,9 @@ class CIFAR100InstanceSample(datasets.CIFAR100):
         num_classes = 100
         if self.train:
             num_samples = len(self.data)
-            label = self.train_labels
+            label = self.targets
         else:
-            num_samples = len(self.train_labels)
+            num_samples = len(self.data)
             label = self.targets
 
         self.cls_positive = [[] for i in range(num_classes)]
@@ -151,9 +151,9 @@ class CIFAR100InstanceSample(datasets.CIFAR100):
 
     def __getitem__(self, index):
         if self.train:
-            img, target = self.data[index], self.train_labels[index]
+            img, target = self.data[index], self.targets[index]
         else:
-            img, target = self.train_labels[index], self.targets[index]
+            img, target = self.data[index], self.targets[index]
 
         # doing this so that it is consistent with all other datasets
         # to return a PIL Image
