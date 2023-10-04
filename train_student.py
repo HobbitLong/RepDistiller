@@ -9,6 +9,7 @@ import argparse
 import socket
 import time
 
+import matplotlib.pyplot as plt
 import tensorboard_logger as tb_logger
 import torch
 import torch.optim as optim
@@ -287,6 +288,10 @@ def main():
     teacher_acc, _, _ = validate(val_loader, model_t, criterion_cls, opt)
     print('teacher accuracy: ', teacher_acc)
 
+    test_loss_list = []
+    test_acc_list = []
+    train_loss_list = []
+    train_acc_list = []
     # routine
     for epoch in range(1, opt.epochs + 1):
 
@@ -295,6 +300,8 @@ def main():
 
         time1 = time.time()
         train_acc, train_loss = train(epoch, train_loader, module_list, criterion_list, optimizer, opt)
+        train_acc_list.append(train_acc)
+        train_loss_list.append(train_loss)
         time2 = time.time()
         print('epoch {}, total time {:.2f}'.format(epoch, time2 - time1))
 
@@ -302,6 +309,8 @@ def main():
         logger.log_value('train_loss', train_loss, epoch)
 
         test_acc, tect_acc_top5, test_loss = validate(val_loader, model_s, criterion_cls, opt)
+        test_acc_list.append(test_acc)
+        test_loss_list.append(test_loss)
 
         logger.log_value('test_acc', test_acc, epoch)
         logger.log_value('test_loss', test_loss, epoch)
@@ -341,6 +350,14 @@ def main():
     }
     save_file = os.path.join(opt.save_folder, '{}_last.pth'.format(opt.model_s))
     torch.save(state, save_file)
+
+    fig = plt.figure(figsize=(20,10))
+    plt.title("learning curve")
+    plt.plot(train_acc_list, label='train')
+    plt.plot(test_acc_list, label='test')
+    plt.xlabel('num_epochs', fontsize=12)
+    plt.ylabel('accuracy', fontsize=12)
+    plt.legend(loc='best')
 
 
 if __name__ == '__main__':
