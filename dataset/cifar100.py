@@ -43,7 +43,7 @@ class CIFAR100Instance(datasets.CIFAR100):
         if self.train:
             img, target = self.data[index], self.train_labels[index]
         else:
-            img, target = self.test_data[index], self.test_labels[index]
+            img, target = self.train_labels[index], self.targets[index]
 
         # doing this so that it is consistent with all other datasets
         # to return a PIL Image
