@@ -300,8 +300,8 @@ def main():
 
         time1 = time.time()
         train_acc, train_loss = train(epoch, train_loader, module_list, criterion_list, optimizer, opt)
-        train_acc_list.append(train_acc.cpu())
-        train_loss_list.append(train_loss.cpu())
+        train_acc_list.append(train_acc)
+        train_loss_list.append(train_loss)
         time2 = time.time()
         print('epoch {}, total time {:.2f}'.format(epoch, time2 - time1))
 
@@ -309,8 +309,8 @@ def main():
         logger.log_value('train_loss', train_loss, epoch)
 
         test_acc, tect_acc_top5, test_loss = validate(val_loader, model_s, criterion_cls, opt)
-        test_acc_list.append(test_acc.cpu())
-        test_loss_list.append(test_loss.cpu())
+        test_acc_list.append(test_acc)
+        test_loss_list.append(test_loss)
 
         logger.log_value('test_acc', test_acc, epoch)
         logger.log_value('test_loss', test_loss, epoch)
@@ -353,8 +353,8 @@ def main():
 
     fig = plt.figure(figsize=(20,10))
     plt.title("learning curve")
-    plt.plot(train_acc_list, label='train')
-    plt.plot(test_acc_list, label='test')
+    plt.plot(train_acc_list.cpu(), label='train')
+    plt.plot(test_acc_list.cpu(), label='test')
     plt.xlabel('num_epochs', fontsize=12)
     plt.ylabel('accuracy', fontsize=12)
     plt.legend(loc='best')
