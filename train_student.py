@@ -164,18 +164,17 @@ def main():
     else:
         raise NotImplementedError(opt.dataset)
 
-    # model
-    model_t = load_teacher(opt.path_t, n_cls)
-    model_s = model_dict[opt.model_s](num_classes=n_cls)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    data = torch.randn(2, 3, 32, 32).to('cuda')
+    # model
+    model_t = load_teacher(opt.path_t, n_cls).to(device)
+    model_s = model_dict[opt.model_s](num_classes=n_cls).to(device)
+
+    data = torch.randn(2, 3, 32, 32).to(device)
     model_t.eval()
     model_s.eval()
     feat_t, _ = model_t(data, is_feat=True)
     feat_s, _ = model_s(data, is_feat=True)
-
-    feat_t = [f.cpu() for f in feat_t]
-    feat_s = [f.cpu() for f in feat_s]
 
     module_list = nn.ModuleList([])
     module_list.append(model_s)
