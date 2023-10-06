@@ -279,10 +279,10 @@ def main():
     # append teacher after optimizer to avoid weight_decay
     module_list.append(model_t)
 
-    if torch.cuda.is_available():
-        module_list.cuda()
-        criterion_list.cuda()
-        cudnn.benchmark = True
+    # if torch.cuda.is_available():
+    #     module_list.cuda()
+    #     criterion_list.cuda()
+    #     cudnn.benchmark = True
 
     # validate teacher accuracy
     teacher_acc, _, _ = validate(val_loader, model_t, criterion_cls, opt)
