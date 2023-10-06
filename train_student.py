@@ -44,7 +44,7 @@ def parse_option():
     parser.add_argument('--save_freq', type=int, default=40, help='save frequency')
     parser.add_argument('--batch_size', type=int, default=64, help='batch_size')
     parser.add_argument('--num_workers', type=int, default=8, help='num of workers to use')
-    parser.add_argument('--epochs', type=int, default=10, help='number of training epochs')
+    parser.add_argument('--epochs', type=int, default=4, help='number of training epochs')
     parser.add_argument('--init_epochs', type=int, default=30, help='init training for two-stage methods')
 
     # optimization
@@ -353,8 +353,8 @@ def main():
 
     fig = plt.figure(figsize=(20,10))
     plt.title("learning curve")
-    plt.plot(train_acc_list.cpu(), label='train')
-    plt.plot(test_acc_list.cpu(), label='test')
+    plt.plot(train_acc_list, label='train')
+    plt.plot(test_acc_list, label='test')
     plt.xlabel('num_epochs', fontsize=12)
     plt.ylabel('accuracy', fontsize=12)
     plt.legend(loc='best')
