@@ -354,13 +354,13 @@ def main():
     save_file = os.path.join(opt.save_folder, '{}_last.pth'.format(opt.model_s))
     torch.save(state, save_file)
 
-    fig = plt.figure(figsize=(20,10))
-    plt.title("learning curve")
-    plt.plot(train_acc_list, label='train')
-    plt.plot(test_acc_list, label='test')
-    plt.xlabel('num_epochs', fontsize=12)
-    plt.ylabel('accuracy', fontsize=12)
-    plt.legend(loc='best')
+    # fig = plt.figure(figsize=(20,10))
+    # plt.title("learning curve")
+    # plt.plot(train_acc_list, label='train')
+    # plt.plot(test_acc_list, label='test')
+    # plt.xlabel('num_epochs', fontsize=12)
+    # plt.ylabel('accuracy', fontsize=12)
+    # plt.legend(loc='best')
 
 
 if __name__ == '__main__':
